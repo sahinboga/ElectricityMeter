@@ -155,7 +155,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICityDal.cs" />
+    <Compile Include="Abstract\ICompanyDal.cs" />
+    <Compile Include="Abstract\IDistrictDal.cs" />
+    <Compile Include="Abstract\IMeterDal.cs" />
     <Compile Include="Concrete\ElectricityMeterContext.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCityDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCompanyDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfDistrictDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfMeterDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +171,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{F4CCF31C-97FB-48AE-9561-1D83962506A4}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{750BCF0B-547E-46E1-9BC9-6F84A5D40D7E}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
