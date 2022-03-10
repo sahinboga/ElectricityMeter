@@ -41,7 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICityService.cs" />
+    <Compile Include="Abstract\ICompanyService.cs" />
+    <Compile Include="Abstract\IDistrictService.cs" />
+    <Compile Include="Abstract\IMeterService.cs" />
+    <Compile Include="Concrete\CityManager.cs" />
+    <Compile Include="Concrete\CompanyManager.cs" />
+    <Compile Include="Concrete\DistrictManager.cs" />
+    <Compile Include="Concrete\MeterManager.cs" />
+    <Compile Include="Constants\Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{F4CCF31C-97FB-48AE-9561-1D83962506A4}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{402023E0-7410-4B19-8F13-B6028A3D0AA6}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{750BCF0B-547E-46E1-9BC9-6F84A5D40D7E}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
