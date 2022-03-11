@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,11 @@ namespace DataAccess.Concrete
 			optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Electricity_Meter;Trusted_Connection=true");
 		}
 
-		
+		public DbSet<Company> Companies { get; set; }
+		public DbSet<Meter> Meters { get; set; }
+		public DbSet<City> Cities { get; set; }
+		public DbSet<District> Districts { get; set; }
+
+
 	}
 }
