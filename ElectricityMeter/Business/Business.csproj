@@ -89,6 +89,7 @@
     <Compile Include="Concrete\MeterManager.cs" />
     <Compile Include="Constants\Messages.cs" />
     <Compile Include="DependencyResolvers\Autofac\AutofacBusinessModule.cs" />
+    <Compile Include="DependencyResolvers\Autofac\InstanceFactory.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\InstanceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
