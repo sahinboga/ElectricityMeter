@@ -9,6 +9,7 @@ namespace Business.Constants
 	public static class Messages
 	{
 		public static string Added = "Eklendi";
+		public static string Listed = "Listelendi";
 		public static string Updated = "Güncellendi";
 		public static string Deleted = "Silindi";
 	}
