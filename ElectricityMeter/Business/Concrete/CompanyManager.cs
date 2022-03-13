@@ -1,4 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -18,9 +21,11 @@ namespace Business.Concrete
 		{
 			_companyDal = companyDal;
 		}
+		[ValidationAspect(typeof(CompanyValidator))]
 		public IResult Add(Company company)
 		{
-			throw new NotImplementedException();
+			_companyDal.Add(company);
+			return new SuccessResult(Messages.Added);
 		}
 
 		public IResult Delete(Company company)

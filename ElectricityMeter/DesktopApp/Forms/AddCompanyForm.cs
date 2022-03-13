@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DesktopApp
+namespace DesktopApp.Forms
 {
-	public partial class Form1 : Form
+	public partial class AddCompanyForm : Form
 	{
-		public Form1()
+		public AddCompanyForm()
 		{
 			InitializeComponent();
 		}
 
+		
 	}
 }
