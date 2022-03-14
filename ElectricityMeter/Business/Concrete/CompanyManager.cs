@@ -30,7 +30,8 @@ namespace Business.Concrete
 
 		public IResult Delete(Company company)
 		{
-			throw new NotImplementedException();
+			_companyDal.Delete(company);
+			return new SuccessResult(Messages.Deleted);
 		}
 
 		public IDataResult<List<Company>> GetAll()
@@ -40,12 +41,14 @@ namespace Business.Concrete
 
 		public IDataResult<Company> GetById(int companyId)
 		{
-			throw new NotImplementedException();
+			var company = _companyDal.GetById(c => c.Id == companyId);
+			return new SuccessDataResult<Company>(company);
 		}
 
 		public IResult Update(Company company)
 		{
-			throw new NotImplementedException();
+			_companyDal.Update(company);
+			return new SuccessResult(Messages.Updated);
 		}
 	}
 }

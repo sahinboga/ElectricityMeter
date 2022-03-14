@@ -43,11 +43,11 @@ namespace Core.DataAccess.EntityFramework
 			}
 		}
 
-		public TEntity GetById(int id)
+		public TEntity GetById(Expression<Func<TEntity, bool>> filter)
 		{
 			using (TContext context = new TContext())
 			{
-				return context.Set<TEntity>().SingleOrDefault(x=>x.Id==id);
+				return context.Set<TEntity>().SingleOrDefault(filter);
 			}
 		}
 
