@@ -144,6 +144,7 @@ namespace DesktopApp.Forms
 			this.btnSaveCompany.TabIndex = 6;
 			this.btnSaveCompany.Text = "Kaydet";
 			this.btnSaveCompany.UseVisualStyleBackColor = false;
+			this.btnSaveCompany.Click += new System.EventHandler(this.btnSaveCompany_Click);
 			// 
 			// rtbxAdress
 			// 
