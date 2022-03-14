@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{8EFCD1F3-08C5-4006-8A89-9D2C2D8A6BF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopApp", "DesktopApp\DesktopApp.csproj", "{5F11A989-22B3-432C-8D48-EFA552AAA7A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesktopApp", "DesktopApp\DesktopApp.csproj", "{5F11A989-22B3-432C-8D48-EFA552AAA7A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{F4CCF31C-97FB-48AE-9561-1D83962506A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{6182DE46-9079-4EF8-8259-6131A7A7E868}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F4CCF31C-97FB-48AE-9561-1D83962506A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4CCF31C-97FB-48AE-9561-1D83962506A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4CCF31C-97FB-48AE-9561-1D83962506A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6182DE46-9079-4EF8-8259-6131A7A7E868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6182DE46-9079-4EF8-8259-6131A7A7E868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6182DE46-9079-4EF8-8259-6131A7A7E868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6182DE46-9079-4EF8-8259-6131A7A7E868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -21,7 +22,7 @@ namespace Business.Concrete
 
 		public IDataResult<List<City>> GetAll()
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<List<City>>(_cityDal.GetAll(), Messages.Listed);
 		}
 
 		public IDataResult<City> GetById(int cityId)
