@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Abstract;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 namespace DesktopApp.Forms
 {
@@ -14,44 +16,15 @@ namespace DesktopApp.Forms
 	{
 		private Form activeForm;
 		private Form AddCompany;
+		private ICompanyService _companyService;
 
-		List<Company> companies = new List<Company>
-		{
-			new Company
-			{
-				CompanyName="dsdsd",
-				CityId=1,
-				DistrictId=1,
-				Address="dmdkfjdıkfjnı",
-				Email="döwlkdwo",
-				Phone="4ı304304",
-				Id=1
-			},
-			new Company
-			{
-				CompanyName="dsdsd",
-				CityId=1,
-				DistrictId=1,
-				Address="dmdkfjdıkfjnı",
-				Email="döwlkdwo",
-				Phone="4ı304304",
-				Id=1
-			},new Company
-			{
-				CompanyName="dsdsd",
-				CityId=1,
-				DistrictId=1,
-				Address="dmdkfjdıkfjnı",
-				Email="döwlkdwo",
-				Phone="4ı304304",
-				Id=1
-			}
-		};
-		
+
 		public CompanyForm()
 		{
 			InitializeComponent();
 			AddCompany = new AddCompanyForm();
+
+			_companyService = InstanceFactory.GetInstance<ICompanyService>();
 		}
 
 
@@ -72,7 +45,12 @@ namespace DesktopApp.Forms
 
 		private void CompanyForm_Load(object sender, EventArgs e)
 		{
-			dataGridView1.DataSource = companies;
+			LoadCompanies();
+		}
+
+		private void LoadCompanies()
+		{
+			//dgwCompanyList.DataSource = _companyService.GetAll();
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

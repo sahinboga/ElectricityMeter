@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Business.DependencyResolvers.Autofac;
+using Business.DependencyResolvers.Ninject;
 using System;
 
 namespace ConsoleTest
