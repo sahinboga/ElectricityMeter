@@ -50,7 +50,7 @@ namespace DesktopApp.Forms
 
 		private void LoadCompanies()
 		{
-			//dgwCompanyList.DataSource = _companyService.GetAll();
+			dgwCompanyList.DataSource = _companyService.GetAll();
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

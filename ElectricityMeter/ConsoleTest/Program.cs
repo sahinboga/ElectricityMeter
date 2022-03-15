@@ -9,7 +9,7 @@ namespace ConsoleTest
 		static ICompanyService service = InstanceFactory.GetInstance<ICompanyService>();
 		static void Main(string[] args)
 		{
-			service.GetAll();
+			service.GetById(1);
 		}
 	}
 }

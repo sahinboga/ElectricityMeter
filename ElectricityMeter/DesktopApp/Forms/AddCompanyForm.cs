@@ -29,8 +29,8 @@ namespace DesktopApp.Forms
 		private void AddCompanyLoad()
 		{
 			//cbxCity.DataSource = _cityService.GetAll();
-			//cbxCity.DisplayMember = "Name";
-			//cbxCity.ValueMember = "Id";
+			cbxCity.DisplayMember = "CityName";
+			cbxCity.ValueMember = "Id";
 		}
 
 		private void btnSaveCompany_Click(object sender, EventArgs e)
