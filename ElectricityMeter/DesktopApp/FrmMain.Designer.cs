@@ -1,7 +1,7 @@
 ﻿
 namespace DesktopApp
 {
-	partial class MainForm
+	partial class FrmMain
 	{
 		/// <summary>
 		///  Required designer variable.
@@ -30,7 +30,7 @@ namespace DesktopApp
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
 			this.pnlMenu = new System.Windows.Forms.Panel();
 			this.btnMeter = new System.Windows.Forms.Button();
 			this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -52,6 +52,11 @@ namespace DesktopApp
 			this.pnlMenu.Controls.Add(this.btnCompany);
 			this.pnlMenu.Controls.Add(this.pnlLogo);
 			this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnMeter.ImageList = this.ımageList1;
+			this.btnMeter.Location = new System.Drawing.Point(0, 120);
+			this.btnMeter.Name = "btnMeter";
+			this.btnMeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+			this.btnMeter.Size = new System.Drawing.Size(220, 60);
 			this.pnlMenu.Location = new System.Drawing.Point(0, 0);
 			this.pnlMenu.Name = "pnlMenu";
 			this.pnlMenu.Size = new System.Drawing.Size(220, 493);
@@ -66,11 +71,6 @@ namespace DesktopApp
 			this.btnMeter.ForeColor = System.Drawing.Color.Gainsboro;
 			this.btnMeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnMeter.ImageIndex = 0;
-			this.btnMeter.ImageList = this.ımageList1;
-			this.btnMeter.Location = new System.Drawing.Point(0, 120);
-			this.btnMeter.Name = "btnMeter";
-			this.btnMeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-			this.btnMeter.Size = new System.Drawing.Size(220, 60);
 			this.btnMeter.TabIndex = 2;
 			this.btnMeter.Text = "   Sayaç";
 			this.btnMeter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

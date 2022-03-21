@@ -12,7 +12,7 @@ namespace DataAccess.Concrete
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Electricity_Meter;Trusted_Connection=true");
+			optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ElectricityMeter;Trusted_Connection=true");
 		}
 
 		public DbSet<Company> Companies { get; set; }

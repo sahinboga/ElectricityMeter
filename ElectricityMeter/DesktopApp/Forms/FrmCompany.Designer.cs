@@ -1,7 +1,7 @@
 ﻿
 namespace DesktopApp.Forms
 {
-	partial class CompanyForm
+	partial class FrmCompany
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -33,7 +33,7 @@ namespace DesktopApp.Forms
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompany));
 			this.panelCompanyTable = new System.Windows.Forms.Panel();
 			this.dgwCompanyList = new System.Windows.Forms.DataGridView();
 			this.btnAddCompany = new System.Windows.Forms.Button();

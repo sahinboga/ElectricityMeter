@@ -12,5 +12,6 @@ namespace Business.Abstract
 	{
 		IDataResult<List<District>> GetAll();
 		IDataResult<District> GetById(int districtId);
+		IDataResult<List<District>> GetDistrictByCity(int cityId);
 	}
 }

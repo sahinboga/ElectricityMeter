@@ -12,17 +12,17 @@ using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 namespace DesktopApp.Forms
 {
-	public partial class CompanyForm : Form
+	public partial class FrmCompany : Form
 	{
 		private Form activeForm;
 		private Form AddCompany;
 		private ICompanyService _companyService;
 
 
-		public CompanyForm()
+		public FrmCompany()
 		{
 			InitializeComponent();
-			AddCompany = new AddCompanyForm();
+			AddCompany = new FrmAddCompany();
 
 			_companyService = InstanceFactory.GetInstance<ICompanyService>();
 		}
@@ -32,7 +32,6 @@ namespace DesktopApp.Forms
 		{
 			if (activeForm != null)
 				activeForm.Close();
-			//ActivateButton(btnSender);
 			activeForm = childForm;
 			childForm.TopLevel = false;
 			childForm.FormBorderStyle = FormBorderStyle.None;
@@ -50,7 +49,8 @@ namespace DesktopApp.Forms
 
 		private void LoadCompanies()
 		{
-			dgwCompanyList.DataSource = _companyService.GetAll();
+			var list = _companyService.GetAll().Data;
+			dgwCompanyList.DataSource = list;
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
