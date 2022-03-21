@@ -21,6 +21,8 @@ namespace Business.Concrete
 		{
 			_companyDal = companyDal;
 		}
+
+		// Add - Firma ekleme
 		[ValidationAspect(typeof(CompanyValidator))]
 		public IResult Add(Company company)
 		{
@@ -28,23 +30,27 @@ namespace Business.Concrete
 			return new SuccessResult(Messages.Added);
 		}
 
+		// Delete - Firma Silme
 		public IResult Delete(Company company)
 		{
 			_companyDal.Delete(company);
 			return new SuccessResult(Messages.Deleted);
 		}
 
+		// GetAll - Firma Listeleme
 		public IDataResult<List<Company>> GetAll()
 		{
 			return new SuccessDataResult<List<Company>>(_companyDal.GetAll(), Messages.Listed);
 		}
 
+		// GetById - Id'ye göre firma getirme
 		public IDataResult<Company> GetById(int companyId)
 		{
 			var company = _companyDal.GetById(c => c.Id == companyId);
 			return new SuccessDataResult<Company>(company);
 		}
 
+		// Update Firma güncelleme
 		public IResult Update(Company company)
 		{
 			_companyDal.Update(company);

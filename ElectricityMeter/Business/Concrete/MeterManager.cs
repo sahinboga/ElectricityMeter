@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -21,27 +22,31 @@ namespace Business.Concrete
 
 		public IResult Add(Meter meter)
 		{
-			throw new NotImplementedException();
+			_meterDal.Add(meter);
+			return new SuccessResult(Messages.Added);
 		}
 
 		public IResult Delete(Meter meter)
 		{
-			throw new NotImplementedException();
+			_meterDal.Delete(meter);
+			return new SuccessResult(Messages.Deleted);
 		}
 
 		public IDataResult<List<Meter>> GetAll()
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<List<Meter>>(_meterDal.GetAll(), Messages.Listed);
 		}
 
 		public IDataResult<Meter> GetById(int meterId)
 		{
-			throw new NotImplementedException();
+			var meter=_meterDal.GetById(m=>m.Id==meterId);
+			return new SuccessDataResult<Meter>(meter);
 		}
 
 		public IResult Update(Meter meter)
 		{
-			throw new NotImplementedException();
+			_meterDal.Update(meter);
+			return new SuccessResult(Messages.Updated);
 		}
 	}
 }

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace DesktopApp
 {
-	public partial class MainForm : Form
+	public partial class FrmMain : Form
 	{
 		private Button currentButton;
 		private Random random;
 		private int tempIndex;
 		private Form activeForm;
 
-		public MainForm()
+		public FrmMain()
 		{
 			InitializeComponent();
 			random = new Random();
@@ -87,7 +87,7 @@ namespace DesktopApp
 
 		private void btnCompany_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new Forms.CompanyForm(), sender);
+			OpenChildForm(new Forms.FrmCompany(), sender);
 
 		}
 

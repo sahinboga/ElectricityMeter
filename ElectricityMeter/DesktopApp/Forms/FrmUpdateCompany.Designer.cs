@@ -1,7 +1,7 @@
 ﻿
 namespace DesktopApp.Forms
 {
-	partial class AddCompanyForm
+	partial class FrmUpdateCompany
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,7 +29,7 @@ namespace DesktopApp.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.pnlAddCompany = new System.Windows.Forms.Panel();
+			this.pnlEditCompany = new System.Windows.Forms.Panel();
 			this.lblAdress = new System.Windows.Forms.Label();
 			this.lblDistrict = new System.Windows.Forms.Label();
 			this.lblCity = new System.Windows.Forms.Label();
@@ -43,30 +43,33 @@ namespace DesktopApp.Forms
 			this.tbxEmail = new System.Windows.Forms.TextBox();
 			this.tbxPhone = new System.Windows.Forms.TextBox();
 			this.tbxName = new System.Windows.Forms.TextBox();
-			this.pnlAddCompany.SuspendLayout();
+			this.btnEditCompany = new System.Windows.Forms.Button();
+			this.pnlEditCompany.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// pnlAddCompany
+			// pnlEditCompany
 			// 
-			this.pnlAddCompany.Controls.Add(this.lblAdress);
-			this.pnlAddCompany.Controls.Add(this.lblDistrict);
-			this.pnlAddCompany.Controls.Add(this.lblCity);
-			this.pnlAddCompany.Controls.Add(this.lblPhone);
-			this.pnlAddCompany.Controls.Add(this.lblEmail);
-			this.pnlAddCompany.Controls.Add(this.lblName);
-			this.pnlAddCompany.Controls.Add(this.btnSaveCompany);
-			this.pnlAddCompany.Controls.Add(this.rtbxAdress);
-			this.pnlAddCompany.Controls.Add(this.cbxDistrict);
-			this.pnlAddCompany.Controls.Add(this.cbxCity);
-			this.pnlAddCompany.Controls.Add(this.tbxEmail);
-			this.pnlAddCompany.Controls.Add(this.tbxPhone);
-			this.pnlAddCompany.Controls.Add(this.tbxName);
-			this.pnlAddCompany.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pnlAddCompany.Location = new System.Drawing.Point(0, 0);
-			this.pnlAddCompany.MaximumSize = new System.Drawing.Size(0, 450);
-			this.pnlAddCompany.Name = "pnlAddCompany";
-			this.pnlAddCompany.Size = new System.Drawing.Size(800, 450);
-			this.pnlAddCompany.TabIndex = 0;
+			this.pnlEditCompany.BackColor = System.Drawing.Color.PowderBlue;
+			this.pnlEditCompany.Controls.Add(this.btnEditCompany);
+			this.pnlEditCompany.Controls.Add(this.lblAdress);
+			this.pnlEditCompany.Controls.Add(this.lblDistrict);
+			this.pnlEditCompany.Controls.Add(this.lblCity);
+			this.pnlEditCompany.Controls.Add(this.lblPhone);
+			this.pnlEditCompany.Controls.Add(this.lblEmail);
+			this.pnlEditCompany.Controls.Add(this.lblName);
+			this.pnlEditCompany.Controls.Add(this.btnSaveCompany);
+			this.pnlEditCompany.Controls.Add(this.rtbxAdress);
+			this.pnlEditCompany.Controls.Add(this.cbxDistrict);
+			this.pnlEditCompany.Controls.Add(this.cbxCity);
+			this.pnlEditCompany.Controls.Add(this.tbxEmail);
+			this.pnlEditCompany.Controls.Add(this.tbxPhone);
+			this.pnlEditCompany.Controls.Add(this.tbxName);
+			this.pnlEditCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlEditCompany.Location = new System.Drawing.Point(0, 0);
+			this.pnlEditCompany.MaximumSize = new System.Drawing.Size(0, 450);
+			this.pnlEditCompany.Name = "pnlEditCompany";
+			this.pnlEditCompany.Size = new System.Drawing.Size(800, 450);
+			this.pnlEditCompany.TabIndex = 1;
 			// 
 			// lblAdress
 			// 
@@ -138,13 +141,12 @@ namespace DesktopApp.Forms
 			this.btnSaveCompany.ForeColor = System.Drawing.Color.White;
 			this.btnSaveCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnSaveCompany.ImageKey = "plus (1).png";
-			this.btnSaveCompany.Location = new System.Drawing.Point(12, 388);
+			this.btnSaveCompany.Location = new System.Drawing.Point(12, 738);
 			this.btnSaveCompany.Name = "btnSaveCompany";
 			this.btnSaveCompany.Size = new System.Drawing.Size(115, 33);
 			this.btnSaveCompany.TabIndex = 6;
 			this.btnSaveCompany.Text = "Kaydet";
 			this.btnSaveCompany.UseVisualStyleBackColor = false;
-			this.btnSaveCompany.Click += new System.EventHandler(this.btnSaveCompany_Click);
 			// 
 			// rtbxAdress
 			// 
@@ -197,36 +199,54 @@ namespace DesktopApp.Forms
 			this.tbxName.Size = new System.Drawing.Size(183, 23);
 			this.tbxName.TabIndex = 0;
 			// 
-			// AddCompanyForm
+			// btnEditCompany
+			// 
+			this.btnEditCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnEditCompany.BackColor = System.Drawing.Color.Teal;
+			this.btnEditCompany.FlatAppearance.BorderSize = 0;
+			this.btnEditCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEditCompany.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.btnEditCompany.ForeColor = System.Drawing.Color.White;
+			this.btnEditCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEditCompany.ImageKey = "plus (1).png";
+			this.btnEditCompany.Location = new System.Drawing.Point(12, 388);
+			this.btnEditCompany.Name = "btnEditCompany";
+			this.btnEditCompany.Size = new System.Drawing.Size(115, 33);
+			this.btnEditCompany.TabIndex = 13;
+			this.btnEditCompany.Text = "Güncelle";
+			this.btnEditCompany.UseVisualStyleBackColor = false;
+			this.btnEditCompany.Click += new System.EventHandler(this.btnEditCompany_Click);
+			// 
+			// FrmUpdateCompany
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.PowderBlue;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.pnlAddCompany);
-			this.Name = "AddCompanyForm";
-			this.Text = "AddCompanyForm";
-			this.pnlAddCompany.ResumeLayout(false);
-			this.pnlAddCompany.PerformLayout();
+			this.Controls.Add(this.pnlEditCompany);
+			this.Name = "FrmUpdateCompany";
+			this.Text = "FrmUpdateCompany";
+			this.pnlEditCompany.ResumeLayout(false);
+			this.pnlEditCompany.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.Panel pnlAddCompany;
-		private System.Windows.Forms.TextBox tbxName;
-		private System.Windows.Forms.RichTextBox rtbxAdress;
-		private System.Windows.Forms.ComboBox cbxDistrict;
-		private System.Windows.Forms.ComboBox cbxCity;
-		private System.Windows.Forms.TextBox tbxEmail;
-		private System.Windows.Forms.TextBox tbxPhone;
-		private System.Windows.Forms.Button btnSaveCompany;
+		private System.Windows.Forms.Panel pnlEditCompany;
 		private System.Windows.Forms.Label lblAdress;
 		private System.Windows.Forms.Label lblDistrict;
 		private System.Windows.Forms.Label lblCity;
 		private System.Windows.Forms.Label lblPhone;
 		private System.Windows.Forms.Label lblEmail;
 		private System.Windows.Forms.Label lblName;
+		private System.Windows.Forms.Button btnSaveCompany;
+		private System.Windows.Forms.RichTextBox rtbxAdress;
+		private System.Windows.Forms.ComboBox cbxDistrict;
+		private System.Windows.Forms.ComboBox cbxCity;
+		private System.Windows.Forms.TextBox tbxEmail;
+		private System.Windows.Forms.TextBox tbxPhone;
+		private System.Windows.Forms.TextBox tbxName;
+		private System.Windows.Forms.Button btnEditCompany;
 	}
 }

@@ -25,9 +25,12 @@ namespace Business.Concrete
 			return new SuccessDataResult<List<City>>(_cityDal.GetAll(), Messages.Listed);
 		}
 
+		// GetById - Id'ye göre veri getirir
 		public IDataResult<City> GetById(int cityId)
 		{
-			throw new NotImplementedException();
+			var city =_cityDal.GetById(c=>c.Id==cityId);
+			return new SuccessDataResult<City>(city);
 		}
+
 	}
 }
