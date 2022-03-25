@@ -52,11 +52,6 @@ namespace DesktopApp
 			this.pnlMenu.Controls.Add(this.btnCompany);
 			this.pnlMenu.Controls.Add(this.pnlLogo);
 			this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-			this.btnMeter.ImageList = this.ımageList1;
-			this.btnMeter.Location = new System.Drawing.Point(0, 120);
-			this.btnMeter.Name = "btnMeter";
-			this.btnMeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-			this.btnMeter.Size = new System.Drawing.Size(220, 60);
 			this.pnlMenu.Location = new System.Drawing.Point(0, 0);
 			this.pnlMenu.Name = "pnlMenu";
 			this.pnlMenu.Size = new System.Drawing.Size(220, 493);
@@ -71,6 +66,11 @@ namespace DesktopApp
 			this.btnMeter.ForeColor = System.Drawing.Color.Gainsboro;
 			this.btnMeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnMeter.ImageIndex = 0;
+			this.btnMeter.ImageList = this.ımageList1;
+			this.btnMeter.Location = new System.Drawing.Point(0, 120);
+			this.btnMeter.Name = "btnMeter";
+			this.btnMeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+			this.btnMeter.Size = new System.Drawing.Size(220, 60);
 			this.btnMeter.TabIndex = 2;
 			this.btnMeter.Text = "   Sayaç";
 			this.btnMeter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,7 +158,7 @@ namespace DesktopApp
 			this.pnlDesktopPanel.Size = new System.Drawing.Size(638, 433);
 			this.pnlDesktopPanel.TabIndex = 2;
 			// 
-			// MainForm
+			// FrmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,9 +167,9 @@ namespace DesktopApp
 			this.Controls.Add(this.pnlTitleBar);
 			this.Controls.Add(this.pnlMenu);
 			this.MinimumSize = new System.Drawing.Size(800, 500);
-			this.Name = "MainForm";
+			this.Name = "FrmMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Form1";
+			this.Text = "SİNERJİ";
 			this.pnlMenu.ResumeLayout(false);
 			this.pnlLogo.ResumeLayout(false);
 			this.pnlLogo.PerformLayout();

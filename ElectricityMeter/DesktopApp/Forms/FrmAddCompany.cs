@@ -19,6 +19,9 @@ namespace DesktopApp.Forms
 		private ICityService _cityService;
 		private IDistrictService _districtService;
 
+		Company company = new Company();
+
+
 		private Form activeForm;
 		public FrmAddCompany()
 		{
@@ -27,27 +30,20 @@ namespace DesktopApp.Forms
 			_companyService = InstanceFactory.GetInstance<ICompanyService>();
 			_cityService = InstanceFactory.GetInstance<ICityService>();
 			_districtService = InstanceFactory.GetInstance<IDistrictService>();
-
-			//Company = new CompanyForm();
-		}
-
-		private void OpenChildForm(Form childForm, object btnSender)
-		{
-			if (activeForm != null)
-				activeForm.Close();
-			activeForm = childForm;
-			childForm.TopLevel = false;
-			childForm.FormBorderStyle = FormBorderStyle.None;
-			childForm.Dock = DockStyle.Fill;
-			this.pnlAddCompany.Controls.Add(childForm);
-			this.pnlAddCompany.Tag = childForm;
-			childForm.BringToFront();
-			childForm.Show();
 		}
 
 		private void AddCompanyForm_Load(object sender, EventArgs e)
 		{
 			LoadCitiesAndDistricts();
+
+			// max length ayarları
+			tbxName.MaxLength = 100;
+			tbxPhone.MaxLength = 14;
+
+			// combo ayarları
+			// Todo: il içinde aynısını yap
+			cbxCity.DropDownStyle = ComboBoxStyle.DropDownList;
+			cbxDistrict.DropDownStyle = ComboBoxStyle.DropDownList;
 		}
 
 		private void LoadCitiesAndDistricts()
@@ -56,12 +52,13 @@ namespace DesktopApp.Forms
 			cbxCity.DisplayMember = "CityName";
 			cbxCity.ValueMember = "Id";
 
-			cbxDistrict.DataSource = _districtService.GetAll().Data;
+			cbxDistrict.DataSource = _districtService.GetDistrictByCity(Convert.ToInt32(cbxCity.SelectedValue)).Data;
 			cbxDistrict.DisplayMember = "DistrictName";
 			cbxDistrict.ValueMember = "Id";
 		}
 
-		private void Reset()
+		// Formları temizleme
+		public void Reset()
 		{
 			tbxName.Text = "";
 			tbxEmail.Text = "";
@@ -74,9 +71,12 @@ namespace DesktopApp.Forms
 			rtbxAdress.Text = "";
 		}
 
+		// Firma ekleme
 		private void btnSaveCompany_Click(object sender, EventArgs e)
 		{
-			_companyService.Add(
+			if (btnSaveCompany.Text == "Kaydet")
+			{
+				_companyService.Add(
 					new Company
 					{
 						CompanyName = tbxName.Text,
@@ -86,11 +86,40 @@ namespace DesktopApp.Forms
 						Address = rtbxAdress.Text
 					}
 				);
-			Reset();
-			OpenChildForm(new FrmCompany(), sender);
-			MessageBox.Show("Firma Eklendi.");
+				Reset();
+				this.Close();
+				MessageBox.Show("Firma Eklendi.");
+			}
+			if (btnSaveCompany.Text == "Güncelle")
+			{
+				_companyService.Update(
+					new Company
+					{
+						CompanyName = tbxName.Text,
+						Email = tbxEmail.Text,
+						Phone = tbxPhone.Text,
+						DistrictId = Convert.ToInt32(cbxDistrict.SelectedValue),
+						Address = rtbxAdress.Text
+					}
+				);
+				this.Close();
+				MessageBox.Show("Firma Güncellendi.");
+			}
+
 		}
 
+		// Firma Güncelleme
+		public void UpdateCompany()
+		{
+			btnSaveCompany.Text = "Güncelle";
+			tbxName.Text = company.CompanyName;
+			tbxEmail.Text = company.Email;
+			tbxPhone.Text = company.Phone;
+			cbxDistrict.SelectedValue = company.DistrictId;
+			rtbxAdress.Text = company.Address;
+		}
+
+		// İl Id'ye Göre İlçe getirme
 		private void cbxCity_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			try
@@ -105,5 +134,7 @@ namespace DesktopApp.Forms
 			
 			
 		}
+
+		
 	}
 }

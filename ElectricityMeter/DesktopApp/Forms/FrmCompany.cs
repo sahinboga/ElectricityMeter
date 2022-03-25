@@ -15,7 +15,7 @@ namespace DesktopApp.Forms
 	public partial class FrmCompany : Form
 	{
 		private Form activeForm;
-		private Form AddCompany;
+		FrmAddCompany AddCompany;
 		private ICompanyService _companyService;
 
 
@@ -28,26 +28,26 @@ namespace DesktopApp.Forms
 		}
 
 
-		private void OpenChildForm(Form childForm, object btnSender)
-		{
-			if (activeForm != null)
-				activeForm.Close();
-			activeForm = childForm;
-			childForm.TopLevel = false;
-			childForm.FormBorderStyle = FormBorderStyle.None;
-			childForm.Dock = DockStyle.Fill;
-			this.pnlCompany.Controls.Add(childForm);
-			this.pnlCompany.Tag = childForm;
-			childForm.BringToFront();
-			childForm.Show();
-		}
+		//private void OpenChildForm(Form childForm, object btnSender)
+		//{
+		//	if (activeForm != null)
+		//		activeForm.Close();
+		//	activeForm = childForm;
+		//	childForm.TopLevel = false;
+		//	childForm.FormBorderStyle = FormBorderStyle.None;
+		//	childForm.Dock = DockStyle.Fill;
+		//	this.pnlCompany.Controls.Add(childForm);
+		//	this.pnlCompany.Tag = childForm;
+		//	childForm.BringToFront();
+		//	childForm.Show();
+		//}
 
 		private void CompanyForm_Load(object sender, EventArgs e)
 		{
 			LoadCompanies();
 		}
 
-		private void LoadCompanies()
+		public void LoadCompanies()
 		{
 			var list = _companyService.GetAll().Data;
 			dgwCompanyList.DataSource = list;
@@ -60,7 +60,14 @@ namespace DesktopApp.Forms
 
 		private void btnAddCompany_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(AddCompany, sender);
+			
+			AddCompany.ShowDialog();
+		}
+
+		private void btnEditCompany_Click(object sender, EventArgs e)
+		{
+			AddCompany.UpdateCompany();
+			AddCompany.ShowDialog();
 		}
 	}
 }
