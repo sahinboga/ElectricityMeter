@@ -15,9 +15,5 @@ namespace Entities.Concrete
 		public string SubscriberNo { get; set; }
 		public int Multipy { get; set; }
 		public int MeterPower { get; set; }
-		public float Active { get; set; }
-		public float Inductive { get; set; }
-		public float Capacitive { get; set; }
-		public DateTime ReadDate { get; set; }
 	}
 }

@@ -17,6 +17,7 @@ namespace DataAccess.Concrete
 
 		public DbSet<Company> Companies { get; set; }
 		public DbSet<Meter> Meters { get; set; }
+		public DbSet<MeterDetail> MeterDetails { get; set; }
 		public DbSet<City> Cities { get; set; }
 		public DbSet<District> Districts { get; set; }
 
