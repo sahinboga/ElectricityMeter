@@ -1,7 +1,7 @@
 ﻿
 namespace DesktopApp.Forms
 {
-	partial class FrmAddCompany
+	partial class FrmAddUpdateCompany
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -30,6 +30,7 @@ namespace DesktopApp.Forms
 		private void InitializeComponent()
 		{
 			this.pnlAddCompany = new System.Windows.Forms.Panel();
+			this.cmbCity = new System.Windows.Forms.ComboBox();
 			this.lblAdress = new System.Windows.Forms.Label();
 			this.lblDistrict = new System.Windows.Forms.Label();
 			this.lblCity = new System.Windows.Forms.Label();
@@ -38,17 +39,16 @@ namespace DesktopApp.Forms
 			this.lblName = new System.Windows.Forms.Label();
 			this.btnSaveCompany = new System.Windows.Forms.Button();
 			this.rtbxAdress = new System.Windows.Forms.RichTextBox();
-			this.cbxDistrict = new System.Windows.Forms.ComboBox();
-			this.tbxEmail = new System.Windows.Forms.TextBox();
-			this.tbxPhone = new System.Windows.Forms.TextBox();
-			this.tbxName = new System.Windows.Forms.TextBox();
-			this.cbxCity = new System.Windows.Forms.ComboBox();
+			this.cmbDistrict = new System.Windows.Forms.ComboBox();
+			this.txtEmail = new System.Windows.Forms.TextBox();
+			this.txtPhone = new System.Windows.Forms.TextBox();
+			this.txtName = new System.Windows.Forms.TextBox();
 			this.pnlAddCompany.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlAddCompany
 			// 
-			this.pnlAddCompany.Controls.Add(this.cbxCity);
+			this.pnlAddCompany.Controls.Add(this.cmbCity);
 			this.pnlAddCompany.Controls.Add(this.lblAdress);
 			this.pnlAddCompany.Controls.Add(this.lblDistrict);
 			this.pnlAddCompany.Controls.Add(this.lblCity);
@@ -57,16 +57,26 @@ namespace DesktopApp.Forms
 			this.pnlAddCompany.Controls.Add(this.lblName);
 			this.pnlAddCompany.Controls.Add(this.btnSaveCompany);
 			this.pnlAddCompany.Controls.Add(this.rtbxAdress);
-			this.pnlAddCompany.Controls.Add(this.cbxDistrict);
-			this.pnlAddCompany.Controls.Add(this.tbxEmail);
-			this.pnlAddCompany.Controls.Add(this.tbxPhone);
-			this.pnlAddCompany.Controls.Add(this.tbxName);
+			this.pnlAddCompany.Controls.Add(this.cmbDistrict);
+			this.pnlAddCompany.Controls.Add(this.txtEmail);
+			this.pnlAddCompany.Controls.Add(this.txtPhone);
+			this.pnlAddCompany.Controls.Add(this.txtName);
 			this.pnlAddCompany.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlAddCompany.Location = new System.Drawing.Point(0, 0);
 			this.pnlAddCompany.MaximumSize = new System.Drawing.Size(0, 450);
 			this.pnlAddCompany.Name = "pnlAddCompany";
 			this.pnlAddCompany.Size = new System.Drawing.Size(665, 450);
 			this.pnlAddCompany.TabIndex = 0;
+			// 
+			// cmbCity
+			// 
+			this.cmbCity.BackColor = System.Drawing.Color.Azure;
+			this.cmbCity.FormattingEnabled = true;
+			this.cmbCity.Location = new System.Drawing.Point(100, 140);
+			this.cmbCity.Name = "cmbCity";
+			this.cmbCity.Size = new System.Drawing.Size(183, 23);
+			this.cmbCity.TabIndex = 13;
+			this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
 			// 
 			// lblAdress
 			// 
@@ -155,48 +165,39 @@ namespace DesktopApp.Forms
 			this.rtbxAdress.TabIndex = 5;
 			this.rtbxAdress.Text = "";
 			// 
-			// cbxDistrict
+			// cmbDistrict
 			// 
-			this.cbxDistrict.BackColor = System.Drawing.Color.Azure;
-			this.cbxDistrict.FormattingEnabled = true;
-			this.cbxDistrict.Location = new System.Drawing.Point(379, 140);
-			this.cbxDistrict.Name = "cbxDistrict";
-			this.cbxDistrict.Size = new System.Drawing.Size(183, 23);
-			this.cbxDistrict.TabIndex = 4;
+			this.cmbDistrict.BackColor = System.Drawing.Color.Azure;
+			this.cmbDistrict.FormattingEnabled = true;
+			this.cmbDistrict.Location = new System.Drawing.Point(379, 140);
+			this.cmbDistrict.Name = "cmbDistrict";
+			this.cmbDistrict.Size = new System.Drawing.Size(183, 23);
+			this.cmbDistrict.TabIndex = 4;
 			// 
-			// tbxEmail
+			// txtEmail
 			// 
-			this.tbxEmail.BackColor = System.Drawing.Color.Azure;
-			this.tbxEmail.Location = new System.Drawing.Point(379, 70);
-			this.tbxEmail.Name = "tbxEmail";
-			this.tbxEmail.Size = new System.Drawing.Size(183, 23);
-			this.tbxEmail.TabIndex = 2;
+			this.txtEmail.BackColor = System.Drawing.Color.Azure;
+			this.txtEmail.Location = new System.Drawing.Point(379, 70);
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(183, 23);
+			this.txtEmail.TabIndex = 2;
 			// 
-			// tbxPhone
+			// txtPhone
 			// 
-			this.tbxPhone.BackColor = System.Drawing.Color.Azure;
-			this.tbxPhone.Location = new System.Drawing.Point(100, 218);
-			this.tbxPhone.Name = "tbxPhone";
-			this.tbxPhone.Size = new System.Drawing.Size(183, 23);
-			this.tbxPhone.TabIndex = 1;
+			this.txtPhone.BackColor = System.Drawing.Color.Azure;
+			this.txtPhone.Location = new System.Drawing.Point(100, 218);
+			this.txtPhone.Name = "txtPhone";
+			this.txtPhone.Size = new System.Drawing.Size(183, 23);
+			this.txtPhone.TabIndex = 1;
 			// 
-			// tbxName
+			// txtName
 			// 
-			this.tbxName.BackColor = System.Drawing.Color.Azure;
-			this.tbxName.Location = new System.Drawing.Point(100, 70);
-			this.tbxName.MaxLength = 100;
-			this.tbxName.Name = "tbxName";
-			this.tbxName.Size = new System.Drawing.Size(183, 23);
-			this.tbxName.TabIndex = 0;
-			// 
-			// cbxCity
-			// 
-			this.cbxCity.BackColor = System.Drawing.Color.Azure;
-			this.cbxCity.FormattingEnabled = true;
-			this.cbxCity.Location = new System.Drawing.Point(100, 140);
-			this.cbxCity.Name = "cbxCity";
-			this.cbxCity.Size = new System.Drawing.Size(183, 23);
-			this.cbxCity.TabIndex = 13;
+			this.txtName.BackColor = System.Drawing.Color.Azure;
+			this.txtName.Location = new System.Drawing.Point(100, 70);
+			this.txtName.MaxLength = 100;
+			this.txtName.Name = "txtName";
+			this.txtName.Size = new System.Drawing.Size(183, 23);
+			this.txtName.TabIndex = 0;
 			// 
 			// FrmAddCompany
 			// 
@@ -219,11 +220,11 @@ namespace DesktopApp.Forms
 		#endregion
 
 		private System.Windows.Forms.Panel pnlAddCompany;
-		private System.Windows.Forms.TextBox tbxName;
+		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.RichTextBox rtbxAdress;
-		private System.Windows.Forms.ComboBox cbxDistrict;
-		private System.Windows.Forms.TextBox tbxEmail;
-		private System.Windows.Forms.TextBox tbxPhone;
+		private System.Windows.Forms.ComboBox cmbDistrict;
+		private System.Windows.Forms.TextBox txtEmail;
+		private System.Windows.Forms.TextBox txtPhone;
 		private System.Windows.Forms.Button btnSaveCompany;
 		private System.Windows.Forms.Label lblAdress;
 		private System.Windows.Forms.Label lblDistrict;
@@ -231,6 +232,6 @@ namespace DesktopApp.Forms
 		private System.Windows.Forms.Label lblPhone;
 		private System.Windows.Forms.Label lblEmail;
 		private System.Windows.Forms.Label lblName;
-		private System.Windows.Forms.ComboBox cbxCity;
+		private System.Windows.Forms.ComboBox cmbCity;
 	}
 }

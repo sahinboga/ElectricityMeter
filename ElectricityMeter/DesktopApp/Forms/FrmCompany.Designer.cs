@@ -107,7 +107,6 @@ namespace DesktopApp.Forms
 			this.dgwCompanyList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgwCompanyList.Size = new System.Drawing.Size(770, 344);
 			this.dgwCompanyList.TabIndex = 0;
-			this.dgwCompanyList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 			// 
 			// btnAddCompany
 			// 

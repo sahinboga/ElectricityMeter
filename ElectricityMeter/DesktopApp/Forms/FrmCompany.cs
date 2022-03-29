@@ -1,46 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Business.Abstract;
+﻿using Business.Abstract;
 using Business.DependencyResolvers.Ninject;
-using Entities.Concrete;
+using System;
+using System.Windows.Forms;
 namespace DesktopApp.Forms
 {
 	public partial class FrmCompany : Form
 	{
-		private Form activeForm;
-		FrmAddCompany AddCompany;
-		private ICompanyService _companyService;
 
+		private ICompanyService _companyService;
 
 		public FrmCompany()
 		{
 			InitializeComponent();
-			AddCompany = new FrmAddCompany();
 
 			_companyService = InstanceFactory.GetInstance<ICompanyService>();
 		}
 
-
-		//private void OpenChildForm(Form childForm, object btnSender)
-		//{
-		//	if (activeForm != null)
-		//		activeForm.Close();
-		//	activeForm = childForm;
-		//	childForm.TopLevel = false;
-		//	childForm.FormBorderStyle = FormBorderStyle.None;
-		//	childForm.Dock = DockStyle.Fill;
-		//	this.pnlCompany.Controls.Add(childForm);
-		//	this.pnlCompany.Tag = childForm;
-		//	childForm.BringToFront();
-		//	childForm.Show();
-		//}
 
 		private void CompanyForm_Load(object sender, EventArgs e)
 		{
@@ -53,21 +28,18 @@ namespace DesktopApp.Forms
 			dgwCompanyList.DataSource = list;
 		}
 
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
 		private void btnAddCompany_Click(object sender, EventArgs e)
 		{
-			
-			AddCompany.ShowDialog();
+			var form = new FrmAddUpdateCompany(0);
+			form.ShowDialog();
+			LoadCompanies();
 		}
 
 		private void btnEditCompany_Click(object sender, EventArgs e)
 		{
-			AddCompany.UpdateCompany();
-			AddCompany.ShowDialog();
+			var id = (int)dgwCompanyList.CurrentRow.Cells[0].Value;
+			var form = new FrmAddUpdateCompany(id);
+			form.ShowDialog();
 		}
 	}
 }
