@@ -24,7 +24,7 @@ namespace DesktopApp.Forms
 
 		public void LoadCompanies()
 		{
-			var list = _companyService.GetAll().Data;
+			var list = _companyService.GetAllWithDetails().Data;
 			dgwCompanyList.DataSource = list;
 		}
 
@@ -40,6 +40,7 @@ namespace DesktopApp.Forms
 			var id = (int)dgwCompanyList.CurrentRow.Cells[0].Value;
 			var form = new FrmAddUpdateCompany(id);
 			form.ShowDialog();
+			LoadCompanies();
 		}
 	}
 }

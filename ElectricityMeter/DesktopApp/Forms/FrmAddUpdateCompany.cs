@@ -26,6 +26,8 @@ namespace DesktopApp.Forms
 			_cityService = InstanceFactory.GetInstance<ICityService>();
 			_districtService = InstanceFactory.GetInstance<IDistrictService>();
 
+			LoadCitiesAndDistricts();
+
 			// muhatap olduğumuz Id
 			this.curId = curId;
 
@@ -40,13 +42,13 @@ namespace DesktopApp.Forms
 				txtPhone.Text = oCompany.Data.Phone;
 				rtbxAdress.Text = oCompany.Data.Address;
 				//todo: diğer elemanlar da basılacak
+				LoadCityAndDistrictByIds(oCompany.Data.DistrictId);
 				curCompany = oCompany.Data;
 			}
 		}
 
 		private void AddCompanyForm_Load(object sender, EventArgs e)
 		{
-			LoadCitiesAndDistricts();
 
 			// max length ayarları
 			txtName.MaxLength = 100;
@@ -55,6 +57,14 @@ namespace DesktopApp.Forms
 			// combo ayarları
 			cmbCity.DropDownStyle = ComboBoxStyle.DropDownList;
 			cmbDistrict.DropDownStyle = ComboBoxStyle.DropDownList;
+		}
+
+		// güncelleme yapılacak firmanın il ve ilçesini combolara getirme
+		private void LoadCityAndDistrictByIds(int districtId)
+		{
+			var district = _districtService.GetById(districtId).Data;
+			cmbCity.SelectedValue = district.CityId;
+			cmbDistrict.SelectedValue = districtId;
 		}
 
 		private void LoadCitiesAndDistricts()

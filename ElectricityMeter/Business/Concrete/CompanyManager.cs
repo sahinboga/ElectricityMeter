@@ -5,8 +5,10 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +43,17 @@ namespace Business.Concrete
 		public IDataResult<List<Company>> GetAll()
 		{
 			return new SuccessDataResult<List<Company>>(_companyDal.GetAll(), Messages.Listed);
+		}
+
+		public IDataResult<List<CompanyDetailDto>> GetAllWithDetails()
+		{
+			return new SuccessDataResult<List<CompanyDetailDto>>(_companyDal.GetAllWithDetails(), Messages.Listed);
+		}
+
+		public List<string> GetByCompanyName()
+		{
+			return _companyDal.GetAll().Select(c => c.CompanyName).ToList();
+
 		}
 
 		// GetById - Id'ye göre firma getirme
