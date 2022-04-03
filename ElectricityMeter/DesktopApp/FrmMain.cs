@@ -49,9 +49,6 @@ namespace DesktopApp
 					currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 					pnlTitleBar.BackColor = color;
 					pnlLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-					//ThemeColor.PrimaryColor = color;
-					//ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-					//btnCloseChildForm.Visible = true;
 				}
 			}
 		}
@@ -93,7 +90,7 @@ namespace DesktopApp
 
 		private void btnMeter_Click(object sender, EventArgs e)
 		{
-			ActivateButton(sender);
+			OpenChildForm(new Forms.FrmMeter(),sender);
 		}
 	}
 }
