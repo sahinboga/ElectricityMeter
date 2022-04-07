@@ -56,6 +56,7 @@ namespace DesktopApp.Forms
 				}
 			}
 		}
+
 		private void OpenChildForm(Form childForm, object btnSender)
 		{
 			if (activeForm != null)
@@ -75,6 +76,8 @@ namespace DesktopApp.Forms
 		{
 			var form = new FrmMeterDetail();
 			OpenChildForm(form, sender);
+
+
 		}
 	}
 }
