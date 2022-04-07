@@ -26,5 +26,8 @@ namespace Entities.Dto
 
 		[DisplayName("E-mail Adresi")]
 		public string Email { get; set; }
+
+		[DisplayName("Durum")]
+		public string Status { get; set; }
 	}
 }

@@ -43,11 +43,17 @@ namespace DesktopApp.Forms
 			this.txtEmail = new System.Windows.Forms.TextBox();
 			this.txtPhone = new System.Windows.Forms.TextBox();
 			this.txtName = new System.Windows.Forms.TextBox();
+			this.cmbStatus = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.lblStatus = new System.Windows.Forms.Label();
 			this.pnlAddCompany.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlAddCompany
 			// 
+			this.pnlAddCompany.Controls.Add(this.lblStatus);
+			this.pnlAddCompany.Controls.Add(this.label1);
+			this.pnlAddCompany.Controls.Add(this.cmbStatus);
 			this.pnlAddCompany.Controls.Add(this.cmbCity);
 			this.pnlAddCompany.Controls.Add(this.lblAdress);
 			this.pnlAddCompany.Controls.Add(this.lblDistrict);
@@ -161,7 +167,7 @@ namespace DesktopApp.Forms
 			this.rtbxAdress.BackColor = System.Drawing.Color.Azure;
 			this.rtbxAdress.Location = new System.Drawing.Point(100, 277);
 			this.rtbxAdress.Name = "rtbxAdress";
-			this.rtbxAdress.Size = new System.Drawing.Size(447, 96);
+			this.rtbxAdress.Size = new System.Drawing.Size(462, 96);
 			this.rtbxAdress.TabIndex = 5;
 			this.rtbxAdress.Text = "";
 			// 
@@ -199,7 +205,35 @@ namespace DesktopApp.Forms
 			this.txtName.Size = new System.Drawing.Size(183, 23);
 			this.txtName.TabIndex = 0;
 			// 
-			// FrmAddCompany
+			// cmbStatus
+			// 
+			this.cmbStatus.BackColor = System.Drawing.Color.Azure;
+			this.cmbStatus.FormattingEnabled = true;
+			this.cmbStatus.Location = new System.Drawing.Point(379, 218);
+			this.cmbStatus.Name = "cmbStatus";
+			this.cmbStatus.Size = new System.Drawing.Size(183, 23);
+			this.cmbStatus.TabIndex = 14;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(0, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(38, 15);
+			this.label1.TabIndex = 15;
+			this.label1.Text = "label1";
+			// 
+			// lblStatus
+			// 
+			this.lblStatus.AutoSize = true;
+			this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblStatus.Location = new System.Drawing.Point(379, 196);
+			this.lblStatus.Name = "lblStatus";
+			this.lblStatus.Size = new System.Drawing.Size(105, 19);
+			this.lblStatus.TabIndex = 16;
+			this.lblStatus.Text = "Firma Durumu :";
+			// 
+			// FrmAddUpdateCompany
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,7 +241,7 @@ namespace DesktopApp.Forms
 			this.ClientSize = new System.Drawing.Size(665, 450);
 			this.Controls.Add(this.pnlAddCompany);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.Name = "FrmAddCompany";
+			this.Name = "FrmAddUpdateCompany";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Firma Ekle";
 			this.Load += new System.EventHandler(this.AddCompanyForm_Load);
@@ -233,5 +267,8 @@ namespace DesktopApp.Forms
 		private System.Windows.Forms.Label lblEmail;
 		private System.Windows.Forms.Label lblName;
 		private System.Windows.Forms.ComboBox cmbCity;
+		private System.Windows.Forms.Label lblStatus;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ComboBox cmbStatus;
 	}
 }

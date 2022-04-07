@@ -24,5 +24,6 @@ namespace Entities.Concrete
 
 		[DisplayName("E-mail Adresi")]
 		public string Email { get; set; }
+		public bool Status { get; set; }
 	}
 }
