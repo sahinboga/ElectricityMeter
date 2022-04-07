@@ -1,7 +1,9 @@
 ﻿using Business.Abstract;
 using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -41,7 +43,7 @@ namespace DesktopApp.Forms
 				txtEmail.Text = oCompany.Data.Email;
 				txtPhone.Text = oCompany.Data.Phone;
 				rtbxAdress.Text = oCompany.Data.Address;
-				//todo: diğer elemanlar da basılacak
+				cmbStatus.SelectedValue = oCompany.Data.Status;
 				LoadCityAndDistrictByIds(oCompany.Data.DistrictId);
 				curCompany = oCompany.Data;
 			}
@@ -57,6 +59,25 @@ namespace DesktopApp.Forms
 			// combo ayarları
 			cmbCity.DropDownStyle = ComboBoxStyle.DropDownList;
 			cmbDistrict.DropDownStyle = ComboBoxStyle.DropDownList;
+			cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+
+			// status combosuna veri ekleme
+			List<StatusDto> status = new List<StatusDto>();
+			status.Add(new StatusDto
+			{
+				Value = true,
+				Display = "Aktif"
+
+			});
+			status.Add(new StatusDto
+			{
+				Value = false,
+				Display = "Pasif"
+
+			});
+			cmbStatus.DataSource = status;
+			cmbStatus.DisplayMember = "Display";
+			cmbStatus.ValueMember = "Value";
 		}
 
 		// güncelleme yapılacak firmanın il ve ilçesini combolara getirme
@@ -114,7 +135,8 @@ namespace DesktopApp.Forms
 						Email = txtEmail.Text.Trim(),
 						Phone = txtPhone.Text.Trim(),
 						DistrictId = Convert.ToInt32(cmbDistrict.SelectedValue),
-						Address = rtbxAdress.Text.Trim()
+						Address = rtbxAdress.Text.Trim(),
+						Status=Convert.ToBoolean(cmbStatus.SelectedValue)
 					}
 				);
 				FormReset();
@@ -130,6 +152,7 @@ namespace DesktopApp.Forms
 				curCompany.Phone = txtPhone.Text.Trim();
 				curCompany.DistrictId = Convert.ToInt32(cmbDistrict.SelectedValue);
 				curCompany.Address = rtbxAdress.Text.Trim();
+				curCompany.Status = Convert.ToBoolean(cmbStatus.SelectedValue);
 
 				var res = _companyService.Update(curCompany);
 

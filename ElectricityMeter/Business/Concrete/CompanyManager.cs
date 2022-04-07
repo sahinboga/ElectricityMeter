@@ -4,6 +4,7 @@ using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using Entities.Dto;
 using System;
@@ -39,21 +40,17 @@ namespace Business.Concrete
 			return new SuccessResult(Messages.Deleted);
 		}
 
+		
+
 		// GetAll - Firma Listeleme
 		public IDataResult<List<Company>> GetAll()
 		{
 			return new SuccessDataResult<List<Company>>(_companyDal.GetAll(), Messages.Listed);
 		}
 
-		public IDataResult<List<CompanyDetailDto>> GetAllWithDetails()
+		public IDataResult<List<CompanyDetailDto>> GetAllWithDetails(FirmaTipiEnum firmaTipi)
 		{
-			return new SuccessDataResult<List<CompanyDetailDto>>(_companyDal.GetAllWithDetails(), Messages.Listed);
-		}
-
-		public List<string> GetByCompanyName()
-		{
-			return _companyDal.GetAll().Select(c => c.CompanyName).ToList();
-
+			return new SuccessDataResult<List<CompanyDetailDto>>(_companyDal.GetAllWithDetails(firmaTipi), Messages.Listed);
 		}
 
 		// GetById - Id'ye göre firma getirme
