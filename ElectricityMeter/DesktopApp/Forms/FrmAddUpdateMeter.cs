@@ -37,10 +37,8 @@ namespace DesktopApp.Forms
 				cmbCompany.SelectedValue = oMeter.CompanyId;
 				txtMeterNo.Text = oMeter.MeterNo;
 				txtSubscriberNo.Text = oMeter.SubscriberNo;
-				// Todo: diğer elemanlarda basılacak
 				txtMultipy.Text = (oMeter.Multipy).ToString();
 				txtMeterPower.Text = (oMeter.MeterPower).ToString();
-
 				curMeter = oMeter;
 			}
 		}
@@ -48,6 +46,9 @@ namespace DesktopApp.Forms
 		// Sayaç ekleme ve güncelleme
 		private void FrmAddUpdateMeter_Load(object sender, EventArgs e)
 		{
+			txtMeterNo.MaxLength = 20;
+			txtSubscriberNo.MaxLength = 20;
+
 			// combo ayarları
 			cmbCompany.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -79,6 +80,28 @@ namespace DesktopApp.Forms
 		}
 		private void btnSaveMeter_Click(object sender, EventArgs e)
 		{
+			// Validate işlemleri
+			if (txtMeterNo.Text.Trim().Length ==0)
+			{
+				MessageBox.Show("Sayaç No Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			if (txtSubscriberNo.Text.Trim().Length == 0)
+			{
+				MessageBox.Show("Abone No Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			if (txtMeterPower.Text.Trim().Length == 0)
+			{
+				MessageBox.Show("Sayaç Gücü Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			if (txtMultipy.Text.Trim().Length == 0)
+			{
+				MessageBox.Show("Sayaç Çarpanı Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
 			if (curId == 0)
 			{
 				// add formu ise servisteki add methodunu çağır

@@ -11,9 +11,9 @@ namespace Entities.Concrete
 	{
 		public int Id { get; set; }
 		public int MeterId { get; set; }
-		public float Active { get; set; }
-		public float Inductive { get; set; }
-		public float Capacitive { get; set; }
+		public double Active { get; set; }
+		public double Inductive { get; set; }
+		public double Capacitive { get; set; }
 		public DateTime ReadDate { get; set; }
 	}
 }

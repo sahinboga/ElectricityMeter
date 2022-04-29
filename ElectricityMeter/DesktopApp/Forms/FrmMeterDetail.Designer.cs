@@ -34,7 +34,7 @@ namespace DesktopApp.Forms
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.pnlMeterDetail = new System.Windows.Forms.Panel();
-			this.btn = new System.Windows.Forms.Button();
+			this.btnCalculateMeter = new System.Windows.Forms.Button();
 			this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.dgwMeterDetail = new System.Windows.Forms.DataGridView();
 			this.pnlCompanyName = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@ namespace DesktopApp.Forms
 			// 
 			// pnlMeterDetail
 			// 
-			this.pnlMeterDetail.Controls.Add(this.btn);
+			this.pnlMeterDetail.Controls.Add(this.btnCalculateMeter);
 			this.pnlMeterDetail.Controls.Add(this.dgwMeterDetail);
 			this.pnlMeterDetail.Controls.Add(this.pnlCompanyName);
 			this.pnlMeterDetail.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -55,23 +55,24 @@ namespace DesktopApp.Forms
 			this.pnlMeterDetail.Size = new System.Drawing.Size(800, 450);
 			this.pnlMeterDetail.TabIndex = 0;
 			// 
-			// btn
+			// btnCalculateMeter
 			// 
-			this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn.BackColor = System.Drawing.Color.Teal;
-			this.btn.FlatAppearance.BorderSize = 0;
-			this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btn.ForeColor = System.Drawing.Color.White;
-			this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btn.ImageKey = "electric-meter.png";
-			this.btn.ImageList = this.ımageList1;
-			this.btn.Location = new System.Drawing.Point(653, 58);
-			this.btn.Name = "btn";
-			this.btn.Size = new System.Drawing.Size(135, 33);
-			this.btn.TabIndex = 2;
-			this.btn.Text = "    Sayaç Hesapla";
-			this.btn.UseVisualStyleBackColor = false;
+			this.btnCalculateMeter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnCalculateMeter.BackColor = System.Drawing.Color.Teal;
+			this.btnCalculateMeter.FlatAppearance.BorderSize = 0;
+			this.btnCalculateMeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCalculateMeter.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.btnCalculateMeter.ForeColor = System.Drawing.Color.White;
+			this.btnCalculateMeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnCalculateMeter.ImageKey = "electric-meter.png";
+			this.btnCalculateMeter.ImageList = this.ımageList1;
+			this.btnCalculateMeter.Location = new System.Drawing.Point(653, 58);
+			this.btnCalculateMeter.Name = "btnCalculateMeter";
+			this.btnCalculateMeter.Size = new System.Drawing.Size(135, 33);
+			this.btnCalculateMeter.TabIndex = 2;
+			this.btnCalculateMeter.Text = "    Sayaç Hesapla";
+			this.btnCalculateMeter.UseVisualStyleBackColor = false;
+			this.btnCalculateMeter.Click += new System.EventHandler(this.btnCalculateMeter_Click);
 			// 
 			// ımageList1
 			// 
@@ -105,7 +106,7 @@ namespace DesktopApp.Forms
 			this.dgwMeterDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
 			dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -142,7 +143,7 @@ namespace DesktopApp.Forms
 			this.lblCompanyName.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCompanyName.AutoSize = true;
 			this.lblCompanyName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblCompanyName.Location = new System.Drawing.Point(353, 9);
+			this.lblCompanyName.Location = new System.Drawing.Point(326, 9);
 			this.lblCompanyName.Name = "lblCompanyName";
 			this.lblCompanyName.Size = new System.Drawing.Size(135, 21);
 			this.lblCompanyName.TabIndex = 1;
@@ -172,7 +173,7 @@ namespace DesktopApp.Forms
 		private System.Windows.Forms.Panel pnlCompanyName;
 		private System.Windows.Forms.Label lblCompanyName;
 		private System.Windows.Forms.DataGridView dgwMeterDetail;
-		private System.Windows.Forms.Button btn;
+		private System.Windows.Forms.Button btnCalculateMeter;
 		private System.Windows.Forms.ImageList ımageList1;
 	}
 }

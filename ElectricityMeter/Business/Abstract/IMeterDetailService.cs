@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Business.Abstract
 	public interface IMeterDetailService
 	{
 		IDataResult<List<MeterDetail>> GetAll();
+		IDataResult<List<MeterDetailDto>> GetAllWithDetails(int meterId);
 		IResult Add(MeterDetail meter);
 		IDataResult<MeterDetail> GetById(int meterDetailId);
 		IResult Update(MeterDetail meter);

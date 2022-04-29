@@ -125,6 +125,19 @@ namespace DesktopApp.Forms
 				return;
 			}
 
+			// Validate işlemleri
+			if (txtName.Text.Trim().Length <= 5)
+			{
+				MessageBox.Show("Firma Adı En Az 5 Karakterli Olmalıdır!","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
+			if (txtPhone.Text.Trim().Length <= 10)
+			{
+				MessageBox.Show("Telefon Numarası Geçersizdir!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
 			if (this.curId == 0)
 			{
 				// add formu ise servisteki add methodunu çağır

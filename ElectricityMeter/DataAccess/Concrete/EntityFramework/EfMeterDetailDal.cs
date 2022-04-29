@@ -11,5 +11,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
 	public class EfMeterDetailDal: EfEntityRepositoryBase<MeterDetail, ElectricityMeterContext>, IMeterDetailDal
 	{
+
 	}
 }

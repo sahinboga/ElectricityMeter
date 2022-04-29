@@ -70,14 +70,14 @@ namespace DesktopApp.Forms
 			this.pnlMeter.Tag = childForm;
 			childForm.BringToFront();
 			childForm.Show();
+			
 		}
 
 		private void btnMeterDetail_Click(object sender, EventArgs e)
 		{
-			var form = new FrmMeterDetail();
+			var id = (int)dgwMeterList.CurrentRow.Cells[0].Value;
+			var form = new FrmMeterDetail(id);
 			OpenChildForm(form, sender);
-
-
 		}
 	}
 }

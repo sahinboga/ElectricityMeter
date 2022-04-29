@@ -61,7 +61,7 @@ namespace DesktopApp.Forms
 			this.pnlAddMeter.Location = new System.Drawing.Point(0, 0);
 			this.pnlAddMeter.MaximumSize = new System.Drawing.Size(0, 450);
 			this.pnlAddMeter.Name = "pnlAddMeter";
-			this.pnlAddMeter.Size = new System.Drawing.Size(665, 450);
+			this.pnlAddMeter.Size = new System.Drawing.Size(0, 401);
 			this.pnlAddMeter.TabIndex = 0;
 			// 
 			// lblMeterPower
