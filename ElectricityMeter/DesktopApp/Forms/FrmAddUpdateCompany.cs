@@ -40,7 +40,10 @@ namespace DesktopApp.Forms
 			{
 				var oCompany = _companyService.GetById(this.curId);
 				txtName.Text = oCompany.Data.CompanyName;
-				txtEmail.Text = oCompany.Data.Email;
+				txtMeterNo.Text = oCompany.Data.MeterNo;
+				txtSubscriberNo.Text = oCompany.Data.SubscriberNo;
+				txtTransformerPower.Text = oCompany.Data.TransformerPower.ToString();
+				txtMeterMultipy.Text = oCompany.Data.MeterMultipy.ToString();
 				txtPhone.Text = oCompany.Data.Phone;
 				rtbxAdress.Text = oCompany.Data.Address;
 				cmbStatus.SelectedValue = oCompany.Data.Status;
@@ -103,7 +106,7 @@ namespace DesktopApp.Forms
 		public void FormReset()
 		{
 			txtName.Text = string.Empty;
-			txtEmail.Text = string.Empty;
+			txtMeterNo.Text = string.Empty;
 			txtPhone.Text = string.Empty;
 			cmbCity.SelectedIndex = 0;
 			if (cmbDistrict.Items.Count > 0)
@@ -116,14 +119,6 @@ namespace DesktopApp.Forms
 		// Firma ekleme ve güncelleme
 		private void btnSaveCompany_Click(object sender, EventArgs e)
 		{
-			// email girişi doğruluğu yap
-			Regex rEmail = new Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
-			if (!rEmail.IsMatch(txtEmail.Text))
-			{
-				MessageBox.Show("Geçerli bir e-Mail giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				txtEmail.Focus();
-				return;
-			}
 
 			// Validate işlemleri
 			if (txtName.Text.Trim().Length <= 5)
@@ -138,6 +133,27 @@ namespace DesktopApp.Forms
 				return;
 			}
 
+			if (txtMeterNo.Text.Trim().Length == 0)
+			{
+				MessageBox.Show("Sayaç No Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			if (txtSubscriberNo.Text.Trim().Length == 0)
+			{
+				MessageBox.Show("Abone No Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			if (txtTransformerPower.Text.Trim().Length == 0)
+			{
+				MessageBox.Show("Trafo Gücü Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			if (txtMeterMultipy.Text.Trim().Length == 0)
+			{
+				MessageBox.Show("Sayaç Çarpanı Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
 			if (this.curId == 0)
 			{
 				// add formu ise servisteki add methodunu çağır
@@ -145,7 +161,10 @@ namespace DesktopApp.Forms
 					new Company
 					{
 						CompanyName = txtName.Text.Trim(),
-						Email = txtEmail.Text.Trim(),
+						MeterNo = txtMeterNo.Text.Trim(),
+						SubscriberNo=txtSubscriberNo.Text.Trim(),
+						TransformerPower=Convert.ToInt32(txtTransformerPower.Text.Trim()),
+						MeterMultipy=Convert.ToInt32(txtMeterMultipy.Text.Trim()),
 						Phone = txtPhone.Text.Trim(),
 						DistrictId = Convert.ToInt32(cmbDistrict.SelectedValue),
 						Address = rtbxAdress.Text.Trim(),
@@ -161,7 +180,10 @@ namespace DesktopApp.Forms
 				// değilse (güncelleme formuysa) servisteki update methodunu çağır
 				curCompany.Id = this.curId;
 				curCompany.CompanyName = txtName.Text.Trim();
-				curCompany.Email = txtEmail.Text.Trim();
+				curCompany.MeterNo = txtMeterNo.Text.Trim();
+				curCompany.SubscriberNo = txtMeterNo.Text.Trim();
+				curCompany.TransformerPower = int.Parse(txtMeterNo.Text.Trim());
+				curCompany.MeterMultipy = int.Parse(txtMeterMultipy.Text.Trim());
 				curCompany.Phone = txtPhone.Text.Trim();
 				curCompany.DistrictId = Convert.ToInt32(cmbDistrict.SelectedValue);
 				curCompany.Address = rtbxAdress.Text.Trim();

@@ -38,9 +38,12 @@ namespace DataAccess.Concrete.EntityFramework
 											 Id = c.Id,
 											 Address = c.Address,
 											 CompanyName = c.CompanyName,
-											 Email = c.Email,
 											 Location = city.CityName + "-" + d.DistrictName,
 											 Phone = c.Phone,
+											 MeterNo=c.MeterNo,
+											 SubscriberNo=c.SubscriberNo,
+											 MeterMultipy=c.MeterMultipy,
+											 TransformerPower=c.TransformerPower,
 											 Status = c.Status == true ? "Aktif" : "Pasif"
 										 };
 
@@ -58,9 +61,12 @@ namespace DataAccess.Concrete.EntityFramework
 											 Id = c.Id,
 											 Address = c.Address,
 											 CompanyName = c.CompanyName,
-											 Email = c.Email,
 											 Location = city.CityName + "-" + d.DistrictName,
 											 Phone = c.Phone,
+											 MeterNo = c.MeterNo,
+											 SubscriberNo = c.SubscriberNo,
+											 MeterMultipy = c.MeterMultipy,
+											 TransformerPower = c.TransformerPower,
 											 Status = c.Status == true ? "Aktif" : "Pasif"
 										 };
 
@@ -78,9 +84,12 @@ namespace DataAccess.Concrete.EntityFramework
 											 Id = c.Id,
 											 Address = c.Address,
 											 CompanyName = c.CompanyName,
-											 Email = c.Email,
 											 Location = city.CityName + "-" + d.DistrictName,
 											 Phone = c.Phone,
+											 MeterNo = c.MeterNo,
+											 SubscriberNo = c.SubscriberNo,
+											 MeterMultipy = c.MeterMultipy,
+											 TransformerPower = c.TransformerPower,
 											 Status = c.Status == true ? "Aktif" : "Pasif"
 										 };
 

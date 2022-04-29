@@ -42,14 +42,26 @@ namespace DesktopApp.Forms
 			this.btnSaveCompany = new System.Windows.Forms.Button();
 			this.rtbxAdress = new System.Windows.Forms.RichTextBox();
 			this.cmbDistrict = new System.Windows.Forms.ComboBox();
-			this.txtEmail = new System.Windows.Forms.TextBox();
+			this.txtMeterNo = new System.Windows.Forms.TextBox();
 			this.txtPhone = new System.Windows.Forms.TextBox();
 			this.txtName = new System.Windows.Forms.TextBox();
+			this.txtMeterMultipy = new System.Windows.Forms.TextBox();
+			this.txtTransformerPower = new System.Windows.Forms.TextBox();
+			this.txtSubscriberNo = new System.Windows.Forms.TextBox();
+			this.lblMultipy = new System.Windows.Forms.Label();
+			this.lblPower = new System.Windows.Forms.Label();
+			this.lblSubscriber = new System.Windows.Forms.Label();
 			this.pnlAddCompany.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlAddCompany
 			// 
+			this.pnlAddCompany.Controls.Add(this.lblSubscriber);
+			this.pnlAddCompany.Controls.Add(this.lblPower);
+			this.pnlAddCompany.Controls.Add(this.lblMultipy);
+			this.pnlAddCompany.Controls.Add(this.txtSubscriberNo);
+			this.pnlAddCompany.Controls.Add(this.txtTransformerPower);
+			this.pnlAddCompany.Controls.Add(this.txtMeterMultipy);
 			this.pnlAddCompany.Controls.Add(this.lblStatus);
 			this.pnlAddCompany.Controls.Add(this.cmbStatus);
 			this.pnlAddCompany.Controls.Add(this.cmbCity);
@@ -62,14 +74,14 @@ namespace DesktopApp.Forms
 			this.pnlAddCompany.Controls.Add(this.btnSaveCompany);
 			this.pnlAddCompany.Controls.Add(this.rtbxAdress);
 			this.pnlAddCompany.Controls.Add(this.cmbDistrict);
-			this.pnlAddCompany.Controls.Add(this.txtEmail);
+			this.pnlAddCompany.Controls.Add(this.txtMeterNo);
 			this.pnlAddCompany.Controls.Add(this.txtPhone);
 			this.pnlAddCompany.Controls.Add(this.txtName);
 			this.pnlAddCompany.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlAddCompany.Location = new System.Drawing.Point(0, 0);
 			this.pnlAddCompany.MaximumSize = new System.Drawing.Size(0, 450);
 			this.pnlAddCompany.Name = "pnlAddCompany";
-			this.pnlAddCompany.Size = new System.Drawing.Size(665, 450);
+			this.pnlAddCompany.Size = new System.Drawing.Size(944, 450);
 			this.pnlAddCompany.TabIndex = 0;
 			// 
 			// lblStatus
@@ -147,9 +159,9 @@ namespace DesktopApp.Forms
 			this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lblEmail.Location = new System.Drawing.Point(379, 48);
 			this.lblEmail.Name = "lblEmail";
-			this.lblEmail.Size = new System.Drawing.Size(63, 19);
+			this.lblEmail.Size = new System.Drawing.Size(72, 19);
 			this.lblEmail.TabIndex = 8;
-			this.lblEmail.Text = "E-posta :";
+			this.lblEmail.Text = "Sayaç No :";
 			// 
 			// lblName
 			// 
@@ -197,13 +209,13 @@ namespace DesktopApp.Forms
 			this.cmbDistrict.Size = new System.Drawing.Size(183, 23);
 			this.cmbDistrict.TabIndex = 4;
 			// 
-			// txtEmail
+			// txtMeterNo
 			// 
-			this.txtEmail.BackColor = System.Drawing.Color.Azure;
-			this.txtEmail.Location = new System.Drawing.Point(379, 70);
-			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(183, 23);
-			this.txtEmail.TabIndex = 2;
+			this.txtMeterNo.BackColor = System.Drawing.Color.Azure;
+			this.txtMeterNo.Location = new System.Drawing.Point(379, 70);
+			this.txtMeterNo.Name = "txtMeterNo";
+			this.txtMeterNo.Size = new System.Drawing.Size(183, 23);
+			this.txtMeterNo.TabIndex = 2;
 			// 
 			// txtPhone
 			// 
@@ -222,12 +234,66 @@ namespace DesktopApp.Forms
 			this.txtName.Size = new System.Drawing.Size(183, 23);
 			this.txtName.TabIndex = 0;
 			// 
+			// txtMeterMultipy
+			// 
+			this.txtMeterMultipy.BackColor = System.Drawing.Color.Azure;
+			this.txtMeterMultipy.Location = new System.Drawing.Point(636, 218);
+			this.txtMeterMultipy.Name = "txtMeterMultipy";
+			this.txtMeterMultipy.Size = new System.Drawing.Size(183, 23);
+			this.txtMeterMultipy.TabIndex = 17;
+			// 
+			// txtTransformerPower
+			// 
+			this.txtTransformerPower.BackColor = System.Drawing.Color.Azure;
+			this.txtTransformerPower.Location = new System.Drawing.Point(636, 140);
+			this.txtTransformerPower.Name = "txtTransformerPower";
+			this.txtTransformerPower.Size = new System.Drawing.Size(183, 23);
+			this.txtTransformerPower.TabIndex = 18;
+			// 
+			// txtSubscriberNo
+			// 
+			this.txtSubscriberNo.BackColor = System.Drawing.Color.Azure;
+			this.txtSubscriberNo.Location = new System.Drawing.Point(636, 70);
+			this.txtSubscriberNo.Name = "txtSubscriberNo";
+			this.txtSubscriberNo.Size = new System.Drawing.Size(183, 23);
+			this.txtSubscriberNo.TabIndex = 19;
+			// 
+			// lblMultipy
+			// 
+			this.lblMultipy.AutoSize = true;
+			this.lblMultipy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblMultipy.Location = new System.Drawing.Point(636, 196);
+			this.lblMultipy.Name = "lblMultipy";
+			this.lblMultipy.Size = new System.Drawing.Size(101, 19);
+			this.lblMultipy.TabIndex = 20;
+			this.lblMultipy.Text = "Sayaç Çarpanı :";
+			// 
+			// lblPower
+			// 
+			this.lblPower.AutoSize = true;
+			this.lblPower.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblPower.Location = new System.Drawing.Point(636, 118);
+			this.lblPower.Name = "lblPower";
+			this.lblPower.Size = new System.Drawing.Size(82, 19);
+			this.lblPower.TabIndex = 21;
+			this.lblPower.Text = "Trafo Gücü :";
+			// 
+			// lblSubscriber
+			// 
+			this.lblSubscriber.AutoSize = true;
+			this.lblSubscriber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblSubscriber.Location = new System.Drawing.Point(636, 48);
+			this.lblSubscriber.Name = "lblSubscriber";
+			this.lblSubscriber.Size = new System.Drawing.Size(78, 19);
+			this.lblSubscriber.TabIndex = 22;
+			this.lblSubscriber.Text = "Abone No :";
+			// 
 			// FrmAddUpdateCompany
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.PowderBlue;
-			this.ClientSize = new System.Drawing.Size(665, 450);
+			this.ClientSize = new System.Drawing.Size(944, 450);
 			this.Controls.Add(this.pnlAddCompany);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FrmAddUpdateCompany";
@@ -246,7 +312,7 @@ namespace DesktopApp.Forms
 		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.RichTextBox rtbxAdress;
 		private System.Windows.Forms.ComboBox cmbDistrict;
-		private System.Windows.Forms.TextBox txtEmail;
+		private System.Windows.Forms.TextBox txtMeterNo;
 		private System.Windows.Forms.TextBox txtPhone;
 		private System.Windows.Forms.Button btnSaveCompany;
 		private System.Windows.Forms.Label lblAdress;
@@ -258,5 +324,11 @@ namespace DesktopApp.Forms
 		private System.Windows.Forms.ComboBox cmbCity;
 		private System.Windows.Forms.Label lblStatus;
 		private System.Windows.Forms.ComboBox cmbStatus;
+		private System.Windows.Forms.TextBox txtSubscriberNo;
+		private System.Windows.Forms.TextBox txtTransformerPower;
+		private System.Windows.Forms.TextBox txtMeterMultipy;
+		private System.Windows.Forms.Label lblSubscriber;
+		private System.Windows.Forms.Label lblPower;
+		private System.Windows.Forms.Label lblMultipy;
 	}
 }

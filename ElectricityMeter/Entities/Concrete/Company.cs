@@ -12,18 +12,14 @@ namespace Entities.Concrete
 	{
 		public int Id { get; set; }
 
-		[DisplayName("Firma Adı")]
 		public string CompanyName { get; set; }
 		public int DistrictId { get; set; }
-
-		[DisplayName("Adres")]
 		public string Address { get; set; }
-
-		[DisplayName("Telefon No")]
 		public string Phone { get; set; }
-
-		[DisplayName("E-mail Adresi")]
-		public string Email { get; set; }
 		public bool Status { get; set; }
+		public string MeterNo { get; set; }
+		public string SubscriberNo { get; set; }
+		public int MeterMultipy { get; set; }
+		public int TransformerPower { get; set; }
 	}
 }

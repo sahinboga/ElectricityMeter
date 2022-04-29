@@ -26,7 +26,6 @@ namespace DesktopApp
 				CompanyName = "asad",
 				Address = "sdsdsds",
 				DistrictId = 2,
-				Email = "dfdff",
 				Phone = "2112121",
 				Id = 1
 			});
