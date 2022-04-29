@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.DependencyResolvers.Ninject;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -58,14 +59,21 @@ namespace DesktopApp.Forms
 			if (MessageBox.Show("Silmek istiyor musun?", "Bilgilendirme", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
 			{
 				// todo: yapılacak
-				//try
-				//{
-				var id = (int)dgwCompanyList.CurrentRow.Cells[0].Value;
-				//}
-				//catch (Exception exception)
-				//{
-				//	MessageBox.Show(exception.Message);
-				//}
+				try
+				{
+					var id = (int)dgwCompanyList.CurrentRow.Cells[0].Value;
+					Company company = _companyService.GetAll().Data.Find(c => c.Id == id);
+
+					if (company != null)
+					{
+						_companyService.Delete(company);
+						LoadCompaniesByFirmaTipi();
+					}
+				}
+				catch (Exception exception)
+				{
+					MessageBox.Show(exception.Message);
+				}
 
 
 			}

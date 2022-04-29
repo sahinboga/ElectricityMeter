@@ -30,16 +30,16 @@ namespace DesktopApp.Forms
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMeter));
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.pnlMeter = new System.Windows.Forms.Panel();
+			this.btnMeterDetail = new System.Windows.Forms.Button();
+			this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgwMeterList = new System.Windows.Forms.DataGridView();
 			this.btnAddMeter = new System.Windows.Forms.Button();
-			this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.btnEditMeter = new System.Windows.Forms.Button();
-			this.btnMeterDetail = new System.Windows.Forms.Button();
 			this.pnlMeter.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwMeterList)).BeginInit();
@@ -58,6 +58,33 @@ namespace DesktopApp.Forms
 			this.pnlMeter.Name = "pnlMeter";
 			this.pnlMeter.Size = new System.Drawing.Size(776, 424);
 			this.pnlMeter.TabIndex = 2;
+			// 
+			// btnMeterDetail
+			// 
+			this.btnMeterDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnMeterDetail.BackColor = System.Drawing.Color.Purple;
+			this.btnMeterDetail.FlatAppearance.BorderSize = 0;
+			this.btnMeterDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnMeterDetail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.btnMeterDetail.ForeColor = System.Drawing.Color.White;
+			this.btnMeterDetail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnMeterDetail.ImageKey = "(yok)";
+			this.btnMeterDetail.ImageList = this.ımageList1;
+			this.btnMeterDetail.Location = new System.Drawing.Point(386, 3);
+			this.btnMeterDetail.Name = "btnMeterDetail";
+			this.btnMeterDetail.Size = new System.Drawing.Size(115, 33);
+			this.btnMeterDetail.TabIndex = 4;
+			this.btnMeterDetail.Text = "  Sayaç Detayı";
+			this.btnMeterDetail.UseVisualStyleBackColor = false;
+			this.btnMeterDetail.Click += new System.EventHandler(this.btnMeterDetail_Click);
+			// 
+			// ımageList1
+			// 
+			this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+			this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+			this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+			this.ımageList1.Images.SetKeyName(0, "edit.png");
+			this.ımageList1.Images.SetKeyName(1, "plus (1).png");
 			// 
 			// panel1
 			// 
@@ -80,25 +107,25 @@ namespace DesktopApp.Forms
 			this.dgwMeterList.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgwMeterList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgwMeterList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.CadetBlue;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CadetBlue;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgwMeterList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgwMeterList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgwMeterList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgwMeterList.DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgwMeterList.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dgwMeterList.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgwMeterList.EnableHeadersVisualStyles = false;
 			this.dgwMeterList.GridColor = System.Drawing.SystemColors.ControlLight;
@@ -133,14 +160,6 @@ namespace DesktopApp.Forms
 			this.btnAddMeter.UseVisualStyleBackColor = false;
 			this.btnAddMeter.Click += new System.EventHandler(this.btnAddMeter_Click);
 			// 
-			// ımageList1
-			// 
-			this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-			this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-			this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-			this.ımageList1.Images.SetKeyName(0, "edit.png");
-			this.ımageList1.Images.SetKeyName(1, "plus (1).png");
-			// 
 			// btnEditMeter
 			// 
 			this.btnEditMeter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -159,25 +178,6 @@ namespace DesktopApp.Forms
 			this.btnEditMeter.Text = "   Güncelle";
 			this.btnEditMeter.UseVisualStyleBackColor = false;
 			this.btnEditMeter.Click += new System.EventHandler(this.btnEditMeter_Click);
-			// 
-			// btnMeterDetail
-			// 
-			this.btnMeterDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnMeterDetail.BackColor = System.Drawing.Color.Purple;
-			this.btnMeterDetail.FlatAppearance.BorderSize = 0;
-			this.btnMeterDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnMeterDetail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btnMeterDetail.ForeColor = System.Drawing.Color.White;
-			this.btnMeterDetail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnMeterDetail.ImageKey = "(yok)";
-			this.btnMeterDetail.ImageList = this.ımageList1;
-			this.btnMeterDetail.Location = new System.Drawing.Point(386, 3);
-			this.btnMeterDetail.Name = "btnMeterDetail";
-			this.btnMeterDetail.Size = new System.Drawing.Size(115, 33);
-			this.btnMeterDetail.TabIndex = 4;
-			this.btnMeterDetail.Text = "  Sayaç Detayı";
-			this.btnMeterDetail.UseVisualStyleBackColor = false;
-			this.btnMeterDetail.Click += new System.EventHandler(this.btnMeterDetail_Click);
 			// 
 			// FrmMeter
 			// 

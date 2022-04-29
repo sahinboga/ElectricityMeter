@@ -21,6 +21,9 @@ namespace Business.DependencyResolvers.Ninject
 			Bind<IMeterService>().To<MeterManager>().InSingletonScope();
 			Bind<IMeterDal>().To<EfMeterDal>().InSingletonScope();
 
+			Bind<IMeterDetailService>().To<MeterDetailManager>().InSingletonScope();
+			Bind<IMeterDetailDal>().To<EfMeterDetailDal>().InSingletonScope();
+
 			Bind<ICityService>().To<CityManager>().InSingletonScope();
 			Bind<ICityDal>().To<EfCityDal>().InSingletonScope();
 
