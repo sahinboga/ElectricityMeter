@@ -15,6 +15,7 @@ namespace DesktopApp
 		{
 			InitializeComponent();
 			random = new Random();
+			btnCloseChildForm.Visible = false;
 		}
 
 		private Color SelectThemeColor()
@@ -38,11 +39,12 @@ namespace DesktopApp
 					DisableButton();
 					Color color = SelectThemeColor();
 					currentButton = (Button)btnSender;
-					currentButton.BackColor = color;
+					currentButton.BackColor = Color.DarkBlue;
 					currentButton.ForeColor = Color.White;
 					currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-					pnlTitleBar.BackColor = color;
-					pnlLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+					pnlTitleBar.BackColor = Color.MidnightBlue;
+					pnlLogo.BackColor = Color.MidnightBlue;
+					btnCloseChildForm.Visible = true;
 				}
 			}
 		}
@@ -53,7 +55,7 @@ namespace DesktopApp
 			{
 				if (previousBtn.GetType() == typeof(Button))
 				{
-					previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+					previousBtn.BackColor = Color.MidnightBlue;
 					previousBtn.ForeColor = Color.Gainsboro;
 					previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 				}
@@ -85,6 +87,25 @@ namespace DesktopApp
 		private void btnMeter_Click(object sender, EventArgs e)
 		{
 			OpenChildForm(new Forms.FrmMeter(),sender);
+		}
+
+		private void btnCloseChildForm_Click(object sender, EventArgs e)
+		{
+			if (activeForm != null)
+			{
+				activeForm.Close();
+				Reset();
+			}
+		}
+
+		private void Reset()
+		{
+			DisableButton();
+			lblTitle.Text = "ANASAYFA";
+			pnlTitleBar.BackColor = Color.MidnightBlue;
+			pnlLogo.BackColor = Color.MidnightBlue;
+			currentButton = null;
+			btnCloseChildForm.Visible = false;
 		}
 	}
 }

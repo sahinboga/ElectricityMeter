@@ -16,10 +16,10 @@ namespace Entities.Dto
 		[DisplayName("Tarih")]
 		public DateTime ReadDate { get; set; }
 
-		[DisplayName("Aktif")]
+		[DisplayName("Aktif (1.8.0)")]
 		public double Active { get; set; }
 
-		[DisplayName("Endüktif")]
+		[DisplayName("Endüktif (5.8.0)")]
 		public double Inductive { get; set; }
 
 		[DisplayName("Durum")]
@@ -34,10 +34,7 @@ namespace Entities.Dto
 		[DisplayName("Toplam Oran")]
 		public double ITotalRate { get; set; }
 
-		//[DisplayName("Gün")]
-		//public string IDay { get; set; }
-
-		[DisplayName("Kapasitif")]
+		[DisplayName("Kapasitif (8.8.0)")]
 		public double Capacitive { get; set; }
 
 		[DisplayName("Durum")]
@@ -51,9 +48,6 @@ namespace Entities.Dto
 
 		[DisplayName("Toplam Oran")]
 		public double CTotalRate { get; set; }
-
-		//[DisplayName("Gün")]
-		//public string CDay { get; set; }
 
 		[DisplayName("Günlük Tüketim (1.8.0)")]
 		public double ADailyConsumption { get; set; }

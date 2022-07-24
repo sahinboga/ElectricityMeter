@@ -61,7 +61,7 @@ namespace DesktopApp.Forms
 			this.pnlAddMeter.Location = new System.Drawing.Point(0, 0);
 			this.pnlAddMeter.MaximumSize = new System.Drawing.Size(0, 450);
 			this.pnlAddMeter.Name = "pnlAddMeter";
-			this.pnlAddMeter.Size = new System.Drawing.Size(0, 401);
+			this.pnlAddMeter.Size = new System.Drawing.Size(665, 450);
 			this.pnlAddMeter.TabIndex = 0;
 			// 
 			// lblMeterPower
@@ -124,7 +124,7 @@ namespace DesktopApp.Forms
 			this.btnSaveMeter.ForeColor = System.Drawing.Color.White;
 			this.btnSaveMeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnSaveMeter.ImageKey = "plus (1).png";
-			this.btnSaveMeter.Location = new System.Drawing.Point(119, 325);
+			this.btnSaveMeter.Location = new System.Drawing.Point(119, 374);
 			this.btnSaveMeter.Name = "btnSaveMeter";
 			this.btnSaveMeter.Size = new System.Drawing.Size(115, 33);
 			this.btnSaveMeter.TabIndex = 7;
@@ -167,6 +167,7 @@ namespace DesktopApp.Forms
 			this.cmbCompany.Name = "cmbCompany";
 			this.cmbCompany.Size = new System.Drawing.Size(418, 23);
 			this.cmbCompany.TabIndex = 0;
+			this.cmbCompany.SelectedIndexChanged += new System.EventHandler(this.cmbCompany_SelectedIndexChanged);
 			// 
 			// FrmAddUpdateMeter
 			// 

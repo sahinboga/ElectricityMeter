@@ -9,7 +9,7 @@ namespace DesktopApp.Forms
 	public partial class FrmMeter : Form
 	{	
 		private IMeterService _meterService;
-
+		private IMeterDetailService _meterDetailService;
 		private Form activeForm;
 		private Button currentButton;
 		public FrmMeter()
@@ -17,6 +17,7 @@ namespace DesktopApp.Forms
 			InitializeComponent();
 
 			_meterService = InstanceFactory.GetInstance<IMeterService>();
+			_meterDetailService = InstanceFactory.GetInstance<IMeterDetailService>();
 		}
 
 		private void FrmMeter_Load(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace DesktopApp.Forms
 
 		private void LoadMeters()
 		{
-			var list = _meterService.GetAllWithDetails().Data;
+			var list = _meterDetailService.GetWithDetails().Data;
 			dgwMeterList.DataSource = list;
 		}
 

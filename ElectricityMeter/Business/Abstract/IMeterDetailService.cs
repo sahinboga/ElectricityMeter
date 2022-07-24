@@ -13,6 +13,8 @@ namespace Business.Abstract
 	{
 		IDataResult<List<MeterDetail>> GetAll();
 		IDataResult<List<MeterDetailDto>> GetAllWithDetails(int meterId);
+		IDataResult<List<MeterDto>> GetWithDetails();
+
 		IResult Add(MeterDetail meter);
 		IDataResult<MeterDetail> GetById(int meterDetailId);
 		IResult Update(MeterDetail meter);

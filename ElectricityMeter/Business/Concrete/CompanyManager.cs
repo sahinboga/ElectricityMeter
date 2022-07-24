@@ -35,7 +35,6 @@ namespace Business.Concrete
 			return new SuccessResult(Messages.Deleted);
 		}
 
-		
 
 		// GetAll - Firma Listeleme
 		public IDataResult<List<Company>> GetAll()

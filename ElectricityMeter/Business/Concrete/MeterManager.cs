@@ -12,6 +12,7 @@ namespace Business.Concrete
 	{
 		IMeterDal _meterDal;
 
+
 		public MeterManager(IMeterDal meterDal)
 		{
 			_meterDal = meterDal;

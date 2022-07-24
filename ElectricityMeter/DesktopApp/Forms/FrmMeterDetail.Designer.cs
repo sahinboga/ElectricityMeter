@@ -70,7 +70,7 @@ namespace DesktopApp.Forms
 			this.btnCalculateMeter.Name = "btnCalculateMeter";
 			this.btnCalculateMeter.Size = new System.Drawing.Size(135, 33);
 			this.btnCalculateMeter.TabIndex = 2;
-			this.btnCalculateMeter.Text = "    Sayaç Hesapla";
+			this.btnCalculateMeter.Text = "    Değer Giriniz";
 			this.btnCalculateMeter.UseVisualStyleBackColor = false;
 			this.btnCalculateMeter.Click += new System.EventHandler(this.btnCalculateMeter_Click);
 			// 

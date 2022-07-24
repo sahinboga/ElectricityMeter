@@ -16,7 +16,6 @@ namespace DesktopApp.Forms
 		// entity
 		Meter curMeter = null;
 
-
 		public FrmAddUpdateMeter(int curId)
 		{
 			InitializeComponent();
@@ -33,6 +32,11 @@ namespace DesktopApp.Forms
 
 			if (this.curId > 0)
 			{
+				cmbCompany.Enabled = false;
+			}
+
+			if (this.curId > 0)
+			{
 				var oMeter = _meterService.GetById(this.curId).Data;
 				cmbCompany.SelectedValue = oMeter.CompanyId;
 				txtMeterNo.Text = oMeter.MeterNo;
@@ -42,6 +46,7 @@ namespace DesktopApp.Forms
 				curMeter = oMeter;
 			}
 		}
+
 
 		// Sayaç ekleme ve güncelleme
 		private void FrmAddUpdateMeter_Load(object sender, EventArgs e)
@@ -81,6 +86,7 @@ namespace DesktopApp.Forms
 		private void btnSaveMeter_Click(object sender, EventArgs e)
 		{
 			// Validate işlemleri
+			// todo: maksimum değer doğrulama yap
 			if (txtMeterNo.Text.Trim().Length ==0)
 			{
 				MessageBox.Show("Sayaç No Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -143,6 +149,11 @@ namespace DesktopApp.Forms
 				}
 			}
 
+		}
+
+		private void cmbCompany_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

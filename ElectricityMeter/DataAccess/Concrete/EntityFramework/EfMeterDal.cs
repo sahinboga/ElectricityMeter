@@ -22,10 +22,7 @@ namespace DataAccess.Concrete.EntityFramework
 							 {
 								 Id=m.Id,
 								 CompanyName=c.CompanyName,
-								 MeterNo=m.MeterNo,
-								 MeterPower=m.MeterPower,
-								 Multipy=m.Multipy,
-								 SubscriberNo=m.SubscriberNo
+								 
 							 };
 				return result.ToList();
 			}

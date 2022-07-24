@@ -17,9 +17,5 @@ namespace Entities.Concrete
 		public string Address { get; set; }
 		public string Phone { get; set; }
 		public bool Status { get; set; }
-		public string MeterNo { get; set; }
-		public string SubscriberNo { get; set; }
-		public int MeterMultipy { get; set; }
-		public int TransformerPower { get; set; }
 	}
 }

@@ -55,9 +55,9 @@ namespace DesktopApp.Forms
 				new MeterDetail
 				{
 					MeterId=this.curId,                                                                
-					Active = float.Parse(txtActive.Text.Trim()),
-					Capacitive = float.Parse(txtCapacitive.Text.Trim()),
-					Inductive = float.Parse(txtInductive.Text.Trim()),
+					Active = Math.Round(float.Parse(txtActive.Text.Trim()),3),
+					Capacitive = Math.Round(float.Parse(txtCapacitive.Text.Trim()),3),
+					Inductive = Math.Round(float.Parse(txtInductive.Text.Trim()),3),
 					ReadDate= dtpReadDate.Value
 				}) ;
 			FormReset();

@@ -121,10 +121,46 @@
   <data name="company1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\company1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="company" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\company.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sinerji4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sinerji4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sinerji2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sinerji2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sin2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="meter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sinerji" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sinerji.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="company" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\company.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sin1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sin5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sin5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sin3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sin3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sin11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sin11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sinerji1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sinerji1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sinerji3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sinerji3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zyro-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zyro-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -40,10 +40,6 @@ namespace DesktopApp.Forms
 			{
 				var oCompany = _companyService.GetById(this.curId);
 				txtName.Text = oCompany.Data.CompanyName;
-				txtMeterNo.Text = oCompany.Data.MeterNo;
-				txtSubscriberNo.Text = oCompany.Data.SubscriberNo;
-				txtTransformerPower.Text = oCompany.Data.TransformerPower.ToString();
-				txtMeterMultipy.Text = oCompany.Data.MeterMultipy.ToString();
 				txtPhone.Text = oCompany.Data.Phone;
 				rtbxAdress.Text = oCompany.Data.Address;
 				cmbStatus.SelectedValue = oCompany.Data.Status;
@@ -106,7 +102,6 @@ namespace DesktopApp.Forms
 		public void FormReset()
 		{
 			txtName.Text = string.Empty;
-			txtMeterNo.Text = string.Empty;
 			txtPhone.Text = string.Empty;
 			cmbCity.SelectedIndex = 0;
 			if (cmbDistrict.Items.Count > 0)
@@ -121,36 +116,22 @@ namespace DesktopApp.Forms
 		{
 
 			// Validate işlemleri
-			if (txtName.Text.Trim().Length <= 5)
+			if (txtName.Text.Trim().Length < 4)
 			{
-				MessageBox.Show("Firma Adı En Az 5 Karakterli Olmalıdır!","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Firma Adı En Az 4 Karakterli Olmalıdır!","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
 			if (txtPhone.Text.Trim().Length <= 10)
 			{
-				MessageBox.Show("Telefon Numarası Geçersizdir!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Telefon Numarası Geçersizdir! " +
+					"Format: 0xxx xxx xx xx", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
-			if (txtMeterNo.Text.Trim().Length == 0)
+			if (rtbxAdress.Text.Trim().Length>=200)
 			{
-				MessageBox.Show("Sayaç No Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
-			if (txtSubscriberNo.Text.Trim().Length == 0)
-			{
-				MessageBox.Show("Abone No Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
-			if (txtTransformerPower.Text.Trim().Length == 0)
-			{
-				MessageBox.Show("Trafo Gücü Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
-			if (txtMeterMultipy.Text.Trim().Length == 0)
-			{
-				MessageBox.Show("Sayaç Çarpanı Boş Olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Adres maksimum 200 karakter olmalıdır!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
@@ -161,10 +142,6 @@ namespace DesktopApp.Forms
 					new Company
 					{
 						CompanyName = txtName.Text.Trim(),
-						MeterNo = txtMeterNo.Text.Trim(),
-						SubscriberNo=txtSubscriberNo.Text.Trim(),
-						TransformerPower=Convert.ToInt32(txtTransformerPower.Text.Trim()),
-						MeterMultipy=Convert.ToInt32(txtMeterMultipy.Text.Trim()),
 						Phone = txtPhone.Text.Trim(),
 						DistrictId = Convert.ToInt32(cmbDistrict.SelectedValue),
 						Address = rtbxAdress.Text.Trim(),
@@ -173,17 +150,13 @@ namespace DesktopApp.Forms
 				);
 				FormReset();
 				this.Close();
-				MessageBox.Show("Firma Eklendi.");
+				MessageBox.Show("Firma Eklendi. Firmaya ait sayaç bilgilerini sayaç bölümünden ekleyebilirsiniz!","Bilgilendirme",MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			else
 			{
 				// değilse (güncelleme formuysa) servisteki update methodunu çağır
 				curCompany.Id = this.curId;
 				curCompany.CompanyName = txtName.Text.Trim();
-				curCompany.MeterNo = txtMeterNo.Text.Trim();
-				curCompany.SubscriberNo = txtMeterNo.Text.Trim();
-				curCompany.TransformerPower = int.Parse(txtMeterNo.Text.Trim());
-				curCompany.MeterMultipy = int.Parse(txtMeterMultipy.Text.Trim());
 				curCompany.Phone = txtPhone.Text.Trim();
 				curCompany.DistrictId = Convert.ToInt32(cmbDistrict.SelectedValue);
 				curCompany.Address = rtbxAdress.Text.Trim();
